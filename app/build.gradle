@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.example.dell.singletom"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    testCompile 'junit:junit:4.12'
+
+    //联网框架
+    compile 'com.squareup.okhttp3:okhttp:3.3.0'
+    //解析json字符串，转化为bean对象的框架
+    compile 'com.google.code.gson:gson:2.2.4'
+    //加载图片的网络框架，主要用来加载图片
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+    //轮播图依赖
+    compile 'com.youth.banner:banner:1.4.9'
+    //最新版本
+    compile 'com.chanven.lib:cptr:1.1.0'
+    //PtrClassicFrameLayout上拉下拉刷新
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao-generator:3.0.0'
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    compile 'com.android.support:design:26.0.0-alpha1'
+
+    //请求图片
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+}
